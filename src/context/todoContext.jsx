@@ -94,7 +94,7 @@ export default function TodoContextProvider(props) {
     setSpinner(true);
     try {
       const result = await axios.delete(
-        `${import.meta.env.BACKEND_URL}/${todoId}`
+        `${import.meta.env.BACKEND_URL}/api/todos/${todoId}`
       );
       console.log(result);
       setSpinner(false);
