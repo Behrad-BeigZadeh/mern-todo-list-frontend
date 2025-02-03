@@ -37,7 +37,6 @@ export default function TodoList() {
     todosFunction();
     setRefreshTodos(false);
   }, [refreshTodos]);
-  console.log({ todos });
 
   return (
     <div className="md:font-bold">

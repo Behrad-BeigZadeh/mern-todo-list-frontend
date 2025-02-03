@@ -34,11 +34,6 @@ export default function TodoContextProvider(props) {
           },
         }
       );
-
-      if (!result) {
-        console.log("server-error");
-      }
-
       const todos = result.data.map((item) => item);
       setSpinner(false);
       return todos;
@@ -75,7 +70,6 @@ export default function TodoContextProvider(props) {
           },
         }
       );
-      console.log(result);
 
       if (!result) {
         setInputError("something went wrong");
@@ -96,7 +90,7 @@ export default function TodoContextProvider(props) {
       const result = await axios.delete(
         `${import.meta.env.BACKEND_URL}/api/todos/${todoId}`
       );
-      console.log(result);
+
       setSpinner(false);
       setTodos(todos.filter((todo) => todo._id !== todoId));
       setTodoError("");
